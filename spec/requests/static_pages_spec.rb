@@ -37,4 +37,16 @@ describe "Static pages" do
       expect(page).to have_title('About')
     end
   end
+
+  describe "Contact Us" do
+
+    it "should have the content 'Contact Us'" do
+      visit '/static_pages/contact'
+      expect(page).to have_content('Contact Us')
+    end
+    it "should have title 'Contact'" do
+      visit '/static_pages/contact'
+      expect(page).to have_title('Contact Us')
+    end
+  end
 end
