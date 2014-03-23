@@ -1,8 +1,17 @@
-@import "bootstrap";
+$border-radius-base: 0;
 
+@import "bootstrap";
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+     -webkit-box-shadow: 0 0px 0px !important;
+             box-shadow: 0 0px 0px !important;
+}
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;

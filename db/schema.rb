@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320003509) do
+ActiveRecord::Schema.define(version: 20140323095741) do
+
+  create_table "brands", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "families", force: true do |t|
     t.string   "common_name"
     t.string   "family_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "code"
   end
 
   create_table "users", force: true do |t|
@@ -56,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140320003509) do
     t.float    "ph_low"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
   end
 
   add_index "varieties", ["vegetable_id"], name: "index_varieties_on_vegetable_id"
