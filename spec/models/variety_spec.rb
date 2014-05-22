@@ -50,7 +50,7 @@ describe Variety do
 
   describe "when brand_id is missing" do 
     before { @variety.brand_id = nil }
-    it { should_not be_valid }
+    it { should be_valid }
   end
 
 end

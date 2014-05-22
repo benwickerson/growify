@@ -33,6 +33,5 @@ class Variety < ActiveRecord::Base
   belongs_to :brand
 
   validates :vegetable_id, presence: true
-  validates :brand_id, presence: true
   
 end

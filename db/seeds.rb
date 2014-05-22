@@ -28,10 +28,10 @@ familes = Family.create([
 vegetables = File.read('db/data/vegetables.csv')
 csv = CSV.parse(vegetables, headers: false)
 csv.each do |row|
-  row = Vegetable.create({
+  row = Vegetable.create(
     name:       row[0].titleize,
-    family_id:  family_find("#{row[1]}")
-    })
+    family_id:  family_find(row[1])
+    )
 end
 
 

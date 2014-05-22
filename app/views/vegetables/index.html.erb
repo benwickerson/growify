@@ -1,0 +1,18 @@
+<h1>Vegetables</h1>
+
+<% @families.each do |fam| %>
+<table class="table table-striped table-hover table-condensed table-bordered items-table">
+  <thead>
+    <tr>
+      <th><%= "#{fam.common_name} (#{fam.family_name})" %></th>
+    </tr>
+  </thead>
+  <tbody>
+<% fam.vegetables.each do |veg| %>
+    <tr>
+      <td><%= link_to veg.name, vegetable_path(veg.id) %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<% end %>
