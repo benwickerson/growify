@@ -20,7 +20,10 @@ class Vegetable < ActiveRecord::Base
   # validates :description, presence: true
 
   def info
-    base_url = "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&redirects=true&titles=" + self.name
+
+    uri_name = self.name.gsub(/\s/, "%20")
+
+    base_url = "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&redirects=true&titles=" + uri_name
     
     request = open(base_url).read
 
